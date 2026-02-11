@@ -1,0 +1,45 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.farmxchain:backend >-----------------------
+[INFO] Building FarmXChain Backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ backend ---
+[INFO] Deleting C:\Users\User\Desktop\FarmX-Project\FarmXChain\backend\target
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ backend ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 62 source files with javac [debug release 17] to target\classes
+[INFO] /C:/Users/User/Desktop/FarmX-Project/FarmXChain/backend/src/main/java/com/farmxchain/backend/config/SecurityConfig.java: C:\Users\User\Desktop\FarmX-Project\FarmXChain\backend\src\main\java\com\farmxchain\backend\config\SecurityConfig.java uses or overrides a deprecated API.
+[INFO] /C:/Users/User/Desktop/FarmX-Project/FarmXChain/backend/src/main/java/com/farmxchain/backend/config/SecurityConfig.java: Recompile with -Xlint:deprecation for details.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/User/Desktop/FarmX-Project/FarmXChain/backend/src/main/java/com/farmxchain/backend/service/PaymentService.java:[36,43] cannot find symbol
+  symbol:   variable UUID
+  location: class com.farmxchain.backend.service.PaymentService
+[INFO] 1 error
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  10.710 s
+[INFO] Finished at: 2026-02-09T19:09:40+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project backend: Compilation failure
+[ERROR] /C:/Users/User/Desktop/FarmX-Project/FarmXChain/backend/src/main/java/com/farmxchain/backend/service/PaymentService.java:[36,43] cannot find symbol
+[ERROR]   symbol:   variable UUID
+[ERROR]   location: class com.farmxchain.backend.service.PaymentService
+[ERROR] 
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

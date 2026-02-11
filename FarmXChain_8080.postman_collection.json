@@ -1,0 +1,519 @@
+{
+  "info": {
+    "name": "FarmXChain API - MS1 & MS2",
+    "_postman_id": "farmxchain-milestone-final",
+    "description": "Comprehensive Postman collection for FarmXChain (Milestone 1 & 2). Includes Auth, Farmer Profile, Blockchain-backed Crops, and Admin controls.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register Farmer",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Farmer Jack\",\n  \"email\": \"farmerjack@gmail.com\",\n  \"password\": \"Password123\",\n  \"role\": \"FARMER\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Login Farmer",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if(jsonData.token) {",
+                  "    pm.collectionVariables.set(\"token\", jsonData.token);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"farmerjack@gmail.com\",\n  \"password\": \"Password123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Register Admin",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"System Admin\",\n  \"email\": \"admin@gmail.com\",\n  \"password\": \"admin123\",\n  \"role\": \"ADMIN\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "auth",
+                "register"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Login Admin",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "var jsonData = pm.response.json();",
+                  "if(jsonData.token) {",
+                  "    pm.collectionVariables.set(\"token\", jsonData.token);",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"admin@gmail.com\",\n  \"password\": \"admin123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Farmer Profile",
+      "item": [
+        {
+          "name": "Create Profile",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"farmName\": \"Green Valley Estates\",\n  \"phoneNumber\": \"9876543210\",\n  \"location\": \"Pune\",\n  \"state\": \"Maharashtra\",\n  \"district\": \"Pune\",\n  \"landArea\": 12.5,\n  \"landUnit\": \"Acres\",\n  \"primaryCrop\": \"Wheat\",\n  \"soilType\": \"Black Soil\",\n  \"bankName\": \"ICICI\",\n  \"bankAccountNumber\": \"112233445566\",\n  \"ifscCode\": \"ICIC000123\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/farmer/create",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "farmer",
+                "create"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Update Profile",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"farmName\": \"Green Valley Estates Updated\",\n  \"phoneNumber\": \"9876543211\",\n  \"location\": \"Mumbai\",\n  \"state\": \"Maharashtra\",\n  \"district\": \"Mumbai\",\n  \"landArea\": 15.0,\n  \"landUnit\": \"Acres\",\n  \"primaryCrop\": \"Rice\",\n  \"soilType\": \"Alluvial Soil\",\n  \"bankName\": \"HDFC\",\n  \"bankAccountNumber\": \"998877665544\",\n  \"ifscCode\": \"HDFC000456\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/farmer/update",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "farmer",
+                "update"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get My Profile",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/farmer/me",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "farmer",
+                "me"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Crops (Blockchain)",
+      "item": [
+        {
+          "name": "Add Crop",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"cropName\": \"Organic Basmati Rice\",\n  \"cropType\": \"CEREAL\",\n  \"quantity\": 2500,\n  \"unit\": \"KG\",\n  \"harvestDate\": \"2026-04-10\",\n  \"soilType\": \"Clay\",\n  \"location\": \"Green Valley\",\n  \"description\": \"Pure organic basmati rice with traceability.\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/crops/add",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "crops",
+                "add"
+              ]
+            }
+          }
+        },
+        {
+          "name": "All Crops",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/crops",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "crops"
+              ]
+            }
+          }
+        },
+        {
+          "name": "My Crops",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/crops/my-crops",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "crops",
+                "my-crops"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Crop Details",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/crops/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "crops",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Upload Certificate",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "file",
+                  "type": "file",
+                  "src": []
+                }
+              ]
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/crops/1/certificate",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "crops",
+                "1",
+                "certificate"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "User Info",
+      "item": [
+        {
+          "name": "Get My User Data",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/user/me",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "user",
+                "me"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Admin Panel",
+      "item": [
+        {
+          "name": "List Pending Farmers",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/admin/pending-farmers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "admin",
+                "pending-farmers"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Approve Farmer",
+          "request": {
+            "method": "PUT",
+            "url": {
+              "raw": "http://localhost:8080/api/admin/approve/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "admin",
+                "approve",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Reject Farmer",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/api/admin/reject/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "admin",
+                "reject",
+                "1"
+              ]
+            }
+          }
+        },
+        {
+          "name": "All Registered Users",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/admin/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "admin",
+                "users"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}

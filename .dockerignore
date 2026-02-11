@@ -1,0 +1,25 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+
+# Build artifacts
+**/target/
+**/dist/
+**/node_modules/
+**/build/
+
+# Logs
+*.log
+
+# Git
+.git/
+.gitignore
+
+# Maven wrapper
+.mvn/
+mvnw
+mvnw.cmd

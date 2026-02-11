@@ -1,0 +1,67 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.farmxchain:backend >-----------------------
+[INFO] Building FarmXChain Backend 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] Parameter 'outputDir' is unknown for plugin 'web3j-maven-plugin:4.10.3:generate-sources (default)'
+[WARNING] Parameter 'abiFile' is unknown for plugin 'web3j-maven-plugin:4.10.3:generate-sources (default)'
+[WARNING] Parameter 'binFile' is unknown for plugin 'web3j-maven-plugin:4.10.3:generate-sources (default)'
+[INFO] 
+[INFO] --- clean:3.4.1:clean (default-clean) @ backend ---
+[INFO] Deleting C:\Users\User\Desktop\FarmX-Project\FarmXChain\backend\target
+[INFO] 
+[INFO] --- web3j:4.10.3:generate-sources (default) @ backend ---
+[INFO] No Solidity directory specified, using default directory [src/main/resources]
+[INFO] No Solidity contracts specified, using the default [**/*.sol]
+[WARNING] no contracts found
+[WARNING] 	No Solidity ?ontract found in files '[]'
+[INFO] No abiSourceFiles directory specified, using default directory [src/main/resources]
+[INFO] No abiSourceFiles contracts specified, using the default [**/*.json]
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 2 resources from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ backend ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 32 source files with javac [debug release 17] to target\classes
+[INFO] /C:/Users/User/Desktop/FarmX-Project/FarmXChain/backend/src/main/java/com/farmxchain/backend/config/SecurityConfig.java: C:\Users\User\Desktop\FarmX-Project\FarmXChain\backend\src\main\java\com\farmxchain\backend\config\SecurityConfig.java uses or overrides a deprecated API.
+[INFO] /C:/Users/User/Desktop/FarmX-Project/FarmXChain/backend/src/main/java/com/farmxchain/backend/config/SecurityConfig.java: Recompile with -Xlint:deprecation for details.
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /C:/Users/User/Desktop/FarmX-Project/FarmXChain/backend/src/main/java/com/farmxchain/backend/controller/AdminController.java:[76,23] cannot find symbol
+  symbol:   method getAccountNumber()
+  location: variable farmer of type com.farmxchain.backend.model.Farmer
+[ERROR] /C:/Users/User/Desktop/FarmX-Project/FarmXChain/backend/src/main/java/com/farmxchain/backend/controller/AdminController.java:[73,23] cannot find symbol
+  symbol:   method getAddress()
+  location: variable farmer of type com.farmxchain.backend.model.Farmer
+[ERROR] /C:/Users/User/Desktop/FarmX-Project/FarmXChain/backend/src/main/java/com/farmxchain/backend/controller/AdminController.java:[72,23] cannot find symbol
+  symbol:   method getPhone()
+  location: variable farmer of type com.farmxchain.backend.model.Farmer
+[INFO] 3 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  12.242 s
+[INFO] Finished at: 2026-01-30T20:03:50+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project backend: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/User/Desktop/FarmX-Project/FarmXChain/backend/src/main/java/com/farmxchain/backend/controller/AdminController.java:[76,23] cannot find symbol
+[ERROR]   symbol:   method getAccountNumber()
+[ERROR]   location: variable farmer of type com.farmxchain.backend.model.Farmer
+[ERROR] /C:/Users/User/Desktop/FarmX-Project/FarmXChain/backend/src/main/java/com/farmxchain/backend/controller/AdminController.java:[73,23] cannot find symbol
+[ERROR]   symbol:   method getAddress()
+[ERROR]   location: variable farmer of type com.farmxchain.backend.model.Farmer
+[ERROR] /C:/Users/User/Desktop/FarmX-Project/FarmXChain/backend/src/main/java/com/farmxchain/backend/controller/AdminController.java:[72,23] cannot find symbol
+[ERROR]   symbol:   method getPhone()
+[ERROR]   location: variable farmer of type com.farmxchain.backend.model.Farmer
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

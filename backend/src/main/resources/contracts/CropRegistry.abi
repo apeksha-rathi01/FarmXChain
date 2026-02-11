@@ -1,0 +1,34 @@
+[
+  {
+    "inputs": [
+      {"internalType": "string","name": "cropName","type": "string"},
+      {"internalType": "string","name": "farmerId","type": "string"},
+      {"internalType": "string","name": "harvestDate","type": "string"},
+      {"internalType": "string","name": "qualityData","type": "string"}
+    ],
+    "name": "registerCrop",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "cropCount",
+    "outputs": [{"internalType": "uint256","name": "","type": "uint256"}],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [{"internalType": "uint256","name": "id","type": "uint256"}],
+    "name": "getCrop",
+    "outputs": [
+      {"internalType": "uint256","name": "id","type": "uint256"},
+      {"internalType": "string","name": "cropName","type": "string"},
+      {"internalType": "string","name": "farmerId","type": "string"},
+      {"internalType": "string","name": "harvestDate","type": "string"},
+      {"internalType": "string","name": "qualityData","type": "string"}
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
